@@ -1,6 +1,7 @@
 package me.dio.creditrequestsystem.service.impl
 
 import me.dio.creditrequestsystem.entity.Credit
+import me.dio.creditrequestsystem.exception.BusinessException
 import me.dio.creditrequestsystem.repository.ICreditRepository
 import me.dio.creditrequestsystem.service.ICreditService
 import org.springframework.stereotype.Service
@@ -25,6 +26,6 @@ class CreditServiceImpl (
 
     override fun findByCustomerIdAndCreditCode(customerId: Long, creditCode: UUID): Credit {
         return this.creditRepository.findByCustomerIdAndCreditCode(customerId, creditCode) ?:
-        throw RuntimeException("CreditCode $creditCode not found ")
+        throw BusinessException("CreditCode $creditCode not found ")
     }
 }

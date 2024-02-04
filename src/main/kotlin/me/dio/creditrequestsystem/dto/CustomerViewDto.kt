@@ -4,7 +4,7 @@ import me.dio.creditrequestsystem.entity.Customer
 import java.math.BigDecimal
 
 
-data class CustomerView (
+data class CustomerViewDto (
     var firstName: String,
     var lastName: String,
     val cpf: String,
