@@ -4,13 +4,11 @@ Este projeto foi desenvolvido com o objetivo de concluir o Bootcamp de Desenvolv
 O projeto é inspirado e construído a partir do repositório [cami-la/credit-application-system](https://github.com/cami-la/credit-application-system), 
 adaptando e expandindo algumas poucas funcionalidades para atender aos requisitos do bootcamp.
 
-## 🚀 Começando
+## 🚀 Utilizar o projeto
 
 Para executar esse projeto localmente, siga estas etapas:
 
 ### Pré-requisitos
-
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 - JDK 17 ou superior
 - Kotlin
 - Gradle
