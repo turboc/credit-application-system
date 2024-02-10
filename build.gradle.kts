@@ -19,7 +19,6 @@ repositories {
 	mavenCentral()
 }
 
-
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
@@ -32,6 +31,7 @@ dependencies {
 
 	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("io.mockk:mockk:1.13.4")
 }
 
 tasks.withType<KotlinCompile> {

@@ -7,7 +7,6 @@ import me.dio.creditrequestsystem.dto.CreditViewDto
 import me.dio.creditrequestsystem.dto.CreditViewListDto
 import me.dio.creditrequestsystem.entity.Credit
 import me.dio.creditrequestsystem.service.impl.CreditServiceImpl
-import org.apache.coyote.Response
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -27,7 +26,7 @@ class CreditController(private val creditServiceImpl: CreditServiceImpl) {
 
     @GetMapping
     fun findAllByCustomerId(@RequestParam customerId: Long): ResponseEntity<List<CreditViewListDto>> {
-        return ResponseEntity.status(HttpStatus.OK).body(creditServiceImpl.findAllByCustomer(customerId).stream()
+        return ResponseEntity.status(HttpStatus.OK).body(creditServiceImpl.findAllByCustomerId(customerId).stream()
             .map { credit: Credit -> CreditViewListDto(credit) }.toList()
         )
     }

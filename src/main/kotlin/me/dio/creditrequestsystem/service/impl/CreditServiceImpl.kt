@@ -20,7 +20,7 @@ class CreditServiceImpl (
         return this.creditRepository.save(credit)
     }
 
-    override fun findAllByCustomer(customerId: Long): List<Credit> {
+    override fun findAllByCustomerId(customerId: Long): List<Credit> {
         return this.creditRepository.finAllByCustomerId(customerId)
     }
 
