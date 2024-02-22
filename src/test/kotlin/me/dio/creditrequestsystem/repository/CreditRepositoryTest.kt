@@ -25,6 +25,7 @@ class CreditRepositoryTest {
     private lateinit var credit2: Credit
 
     @BeforeEach fun setup () {
+        testEntityManager.clear()
         customer = testEntityManager.persist(BuildUtil.buildCustomerEmpty())
         credit1 = testEntityManager.persist(BuildUtil.buildCreditEmpty(customer = customer))
         credit2 = testEntityManager.persist(BuildUtil.buildCreditEmpty(customer = customer))
@@ -37,17 +38,20 @@ class CreditRepositoryTest {
         println (credit1)
         println (credit2)
 
+        val simulac1 = credit1.creditCode.toString();
+        val simulac2 = credit2.creditCode.toString();
+
         // given
-        val creditCode1 = UUID.fromString("361f87d6-671f-4a30-9863-4c556fedaa34")
-        val creditCode2 = UUID.fromString("752415d9-0df5-446a-b0a5-5a99ebdbcd16")
+        val creditCode1 = UUID.fromString(simulac1)
+        val creditCode2 = UUID.fromString(simulac2)
 
         credit1.creditCode = creditCode1
         credit2.creditCode = creditCode2
 
         // when
 
-        val fakeCredit1: Credit = creditRepository.findByCustomerIdAndCreditCode(1L, creditCode1)!!
-        val fakeCredit2: Credit = creditRepository.findByCustomerIdAndCreditCode(1L, creditCode2)!!
+        val fakeCredit1: Credit? = creditRepository.findByCustomerIdAndCreditCode(1L, creditCode1)
+        val fakeCredit2: Credit? = creditRepository.findByCustomerIdAndCreditCode(1L, creditCode2)
 
         // then
         Assertions.assertThat(fakeCredit1).isNotNull

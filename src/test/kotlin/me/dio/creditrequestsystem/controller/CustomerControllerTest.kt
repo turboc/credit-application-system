@@ -131,7 +131,7 @@ class CustomerControllerTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("V"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.cpf").value("88358271670"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("jorge@email.com"))
-            .andExpect(MockMvcResultMatchers.jsonPath("$.income").value("1000"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.income").value("1000.0"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.zipCode").value("12345"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Marechal"))
             .andDo(MockMvcResultHandlers.print())
